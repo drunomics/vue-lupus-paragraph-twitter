@@ -1,4 +1,4 @@
-# vue-lupus-paragrpah-twitter
+# vue-lupus-paragraph-twitter
 Vue twitter paragraph component.
 
 
