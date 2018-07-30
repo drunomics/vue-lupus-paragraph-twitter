@@ -17,14 +17,15 @@ import { PgTwitter } from 'vue-lupus-paragraph-twitter';
 Vue.component('pg-twitter', PgTwitter);
 ```
 
-## Options
-You can pass options via props:
+## Properties
+You can pass the following props:
 
+- `data-twitter-url` ( string )
+  The pin's url.
+
+## Example
 ```
 <pg-twitter
-  type="{{ type }}"
   data-twitter-url="/twitter/url"
 >
 ```
-- `data-twitter-url` ( string )
-  The pin's url.
