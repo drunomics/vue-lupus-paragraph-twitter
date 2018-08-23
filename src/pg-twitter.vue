@@ -1,12 +1,6 @@
 <template>
   <div class="paragraph paragraph--twitter">
-    <div class="paragraph__field-media">
-      <slot
-        name="field_media"
-        v-html="embedHtml"
-      >
-      </slot>
-      <slot />
+    <div class="paragraph__field-media" v-html="embedHtml">
     </div>
   </div>
 </template>
@@ -25,7 +19,7 @@
     created() {
       if (this.dataTwitterUrl !== '') {
         axios.get('https://publish.twitter.com/oembed?url=' + this.dataTwitterUrl).then(response => {
-          this.embedHtml = response.html;
+          this.embedHtml = response.data.html;
         });
       }
     },

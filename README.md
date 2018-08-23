@@ -21,7 +21,7 @@ Vue.component('pg-twitter', PgTwitter);
 You can pass the following props:
 
 - `data-twitter-url` ( string )
-  The pin's url.
+  The tweet's url.
 
 ## Example
 ```
