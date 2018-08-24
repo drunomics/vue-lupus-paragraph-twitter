@@ -6,6 +6,7 @@
 </template>
 <script>
   import axios from 'axios';
+  import jsonpAdapter from 'axios-jsonp';
   export default {
     name: 'PgTwitter',
     props: {
@@ -18,7 +19,7 @@
     },
     created() {
       if (this.dataTwitterUrl !== '') {
-        axios.get('https://publish.twitter.com/oembed?url=' + this.dataTwitterUrl).then(response => {
+        axios.get('https://publish.twitter.com/oembed?url=' + this.dataTwitterUrl, {adapter: jsonpAdapter,}).then(response => {
           this.embedHtml = response.data.html;
         });
       }
