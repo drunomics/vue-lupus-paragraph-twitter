@@ -20,12 +20,12 @@ Vue.component('pg-twitter', PgTwitter);
 ## Properties
 You can pass the following props:
 
-- `data-twitter-url` ( string )
+- `data-url` ( string )
   The tweet's url.
 
 ## Example
 ```
 <pg-twitter
-  data-twitter-url="/twitter/url"
+  data-url="/twitter/url"
 >
 ```

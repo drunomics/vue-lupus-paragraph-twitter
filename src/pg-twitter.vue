@@ -10,7 +10,7 @@
   export default {
     name: 'PgTwitter',
     props: {
-      dataTwitterUrl: { type: String, default: () => '' },
+      dataUrl: { type: String, default: () => '' },
     },
     data() {
       return {
@@ -18,8 +18,8 @@
       }
     },
     created() {
-      if (this.dataTwitterUrl !== '') {
-        axios.get('https://publish.twitter.com/oembed?url=' + this.dataTwitterUrl, {adapter: jsonpAdapter,}).then(response => {
+      if (this.dataUrl !== '') {
+        axios.get('https://publish.twitter.com/oembed?url=' + this.dataUrl, {adapter: jsonpAdapter,}).then(response => {
           this.embedHtml = response.data.html;
           // The response HTML from instagram contains this script tag already,
           // but via v-html it does not get executed so we need to add this element here manually.
