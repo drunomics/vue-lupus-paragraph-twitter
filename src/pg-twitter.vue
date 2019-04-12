@@ -1,6 +1,6 @@
 <template>
   <div class="paragraph paragraph--twitter">
-    <slot name="title" />
+    <slot :name="$slots.title ? 'title': 'default'" />
     <div class="twitter-post" v-html="embedHtml">
     </div>
   </div>

@@ -26,7 +26,7 @@ You can pass the following props:
 ## Slots
 You can use the following slots
 
-- `title` ( optional )
+- `title` ( default )
   A title.
 
 ## Example
