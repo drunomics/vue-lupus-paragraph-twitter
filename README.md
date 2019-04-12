@@ -12,7 +12,7 @@ via npm:
 import it:
 
 ```
-import { PgTwitter } from 'vue-lupus-paragraph-twitter';
+import PgTwitter from 'vue-lupus-paragraph-twitter';
 
 Vue.component('pg-twitter', PgTwitter);
 ```
@@ -20,12 +20,18 @@ Vue.component('pg-twitter', PgTwitter);
 ## Properties
 You can pass the following props:
 
-- `data-url` ( string )
+- `src` ( string )
   The tweet's url.
+
+## Slots
+You can use the following slots
+
+- `title` ( default )
+  A title.
 
 ## Example
 ```
-<pg-twitter
-  data-url="/twitter/url"
->
+<pg-twitter src="#the-twitter-post-link">
+  <h3 slot="title">The title value</h3>
+</pg-twitter>
 ```
