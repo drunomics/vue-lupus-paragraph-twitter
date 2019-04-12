@@ -2070,12 +2070,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pg-twitter.vue?vue&type=template&id=6e3c87b7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/pg-twitter.vue?vue&type=template&id=f57d20a2&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"paragraph paragraph--twitter"},[_vm._t(_vm.$slots.title ? 'title': 'default'),_c('div',{staticClass:"twitter-post",domProps:{"innerHTML":_vm._s(_vm.embedHtml)}})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/pg-twitter.vue?vue&type=template&id=6e3c87b7&
+// CONCATENATED MODULE: ./src/pg-twitter.vue?vue&type=template&id=f57d20a2&
 
 // EXTERNAL MODULE: ./node_modules/axios/index.js
 var axios = __webpack_require__("bc3a");
@@ -2111,16 +2111,17 @@ var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
   },
 
   created() {
-    if (this.dataUrl !== '') {
+    if (this.src !== '') {
       axios_default.a.get('https://publish.twitter.com/oembed?url=' + this.src, {
         adapter: lib_default.a
       }).then(response => {
-        this.embedHtml = response.data.html; // The response HTML from instagram contains this script tag already,
+        this.embedHtml = response.data.html; // The response HTML from twitter contains this script tag already,
         // but via v-html it does not get executed so we need to add this element here manually.
 
         const script = document.createElement('script');
         script.src = '//platform.twitter.com/widgets.js';
         script.async = true;
+        script.defer = true;
         document.head.appendChild(script);
       });
     }

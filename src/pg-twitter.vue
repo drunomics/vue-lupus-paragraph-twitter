@@ -19,7 +19,7 @@ export default {
     }
   },
   created () {
-    if (this.dataUrl !== '') {
+    if (this.src !== '') {
       axios.get('https://publish.twitter.com/oembed?url=' + this.src, { adapter: jsonpAdapter }).then(response => {
         this.embedHtml = response.data.html
         // The response HTML from twitter contains this script tag already,
@@ -27,6 +27,7 @@ export default {
         const script = document.createElement('script')
         script.src = '//platform.twitter.com/widgets.js'
         script.async = true
+        script.defer = true
         document.head.appendChild(script)
       })
     }
