@@ -2100,25 +2100,27 @@ var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
   props: {
     src: {
       type: String,
-      default: () => ''
+      default: function _default() {
+        return '';
+      }
     }
   },
-
-  data() {
+  data: function data() {
     return {
       embedHtml: ''
     };
   },
+  created: function created() {
+    var _this = this;
 
-  created() {
     if (this.src !== '') {
       axios_default.a.get('https://publish.twitter.com/oembed?url=' + this.src, {
         adapter: lib_default.a
-      }).then(response => {
-        this.embedHtml = response.data.html; // The response HTML from twitter contains this script tag already,
+      }).then(function (response) {
+        _this.embedHtml = response.data.html; // The response HTML from twitter contains this script tag already,
         // but via v-html it does not get executed so we need to add this element here manually.
 
-        const script = document.createElement('script');
+        var script = document.createElement('script');
         script.src = '//platform.twitter.com/widgets.js';
         script.async = true;
         script.defer = true;
@@ -2126,7 +2128,6 @@ var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
       });
     }
   }
-
 });
 // CONCATENATED MODULE: ./src/pg-twitter.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_pg_twittervue_type_script_lang_js_ = (pg_twittervue_type_script_lang_js_); 
