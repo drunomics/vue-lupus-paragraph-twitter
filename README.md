@@ -1,7 +1,7 @@
 # vue-lupus-paragraph-twitter
 Example Vue twitter paragraph component.
 
-Note this component servers as example component and is not regularly maintained.
+Note this component serves as example component and is not regularly maintained.
 
 
 ## Install
