@@ -1,6 +1,6 @@
 {
   "name": "@drunomics/vue-lupus-paragraph-twitter",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Vue paragraph twitter",
   "main": "dist/vue-lupus-paragraph-twitter.umd.min.js",
   "scripts": {
